@@ -18,22 +18,81 @@
       --shadow:0 18px 50px rgba(19,56,64,.14);
       --radius:24px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.6;
+    }
     a{color:inherit}
+
+    [data-lang="en"] .es{display:none!important}
+    [data-lang="es"] .en{display:none!important}
+
     .container{width:min(1120px,calc(100% - 32px));margin:auto}
-    .nav{position:sticky;top:0;z-index:30;background:rgba(255,253,247,.88);backdrop-filter:blur(14px);border-bottom:1px solid rgba(22,54,64,.08)}
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:30;
+      background:rgba(255,253,247,.88);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(22,54,64,.08);
+    }
     .nav-inner{display:flex;align-items:center;justify-content:space-between;min-height:72px;gap:20px}
     .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:800;letter-spacing:-.02em}
     .brand-mark{width:42px;height:42px;border-radius:14px;background:linear-gradient(145deg,var(--sea),#50c6bd);display:grid;place-items:center;color:white;font-size:21px;box-shadow:0 8px 20px rgba(12,143,146,.25)}
     .nav-links{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:700}
     .nav-links a{text-decoration:none}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;border-radius:999px;padding:14px 21px;font-weight:800;text-decoration:none;cursor:pointer;transition:.2s ease;font-size:15px}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      border:0;
+      border-radius:999px;
+      padding:14px 21px;
+      font-weight:800;
+      text-decoration:none;
+      cursor:pointer;
+      transition:.2s ease;
+      font-size:15px;
+    }
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{background:var(--sea);color:white;box-shadow:0 12px 26px rgba(12,143,146,.24)}
     .btn-primary:hover{background:var(--sea-dark)}
     .btn-soft{background:white;border:1px solid rgba(22,54,64,.12)}
+
+    .lang-toggle{
+      display:flex;
+      align-items:center;
+      gap:2px;
+      border:1px solid currentColor;
+      padding:3px;
+      color:inherit;
+    }
+    .lang-toggle button{
+      border:0;
+      background:transparent;
+      color:inherit;
+      cursor:pointer;
+      padding:8px 10px;
+      font:800 11px/1 Arial,Helvetica,sans-serif;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+    [data-lang="es"] .lang-toggle button[data-lang-btn="es"],
+    [data-lang="en"] .lang-toggle button[data-lang-btn="en"]{
+      background:var(--sea);
+      color:white;
+    }
+    .nav-actions{display:flex;align-items:center;gap:12px}
+
     .hero{position:relative;overflow:hidden;padding:88px 0 72px}
     .hero:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(240,184,74,.16);right:-120px;top:-150px;filter:blur(4px)}
     .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:56px}
@@ -42,6 +101,7 @@
     .hero p{font-size:clamp(18px,2.1vw,22px);color:var(--muted);max-width:650px;margin:0 0 30px}
     .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
     .mini-note{margin-top:18px;font-size:14px;color:var(--muted)}
+
     .visual{position:relative;min-height:450px}
     .blob{position:absolute;inset:25px 0 0 20px;border-radius:45% 55% 48% 52% / 55% 45% 55% 45%;background:linear-gradient(145deg,#bce9e2,#73cfc7);transform:rotate(-4deg)}
     .card-main{position:absolute;inset:70px 35px 55px 55px;background:white;border-radius:32px;box-shadow:var(--shadow);padding:34px;transform:rotate(2deg)}
@@ -49,6 +109,7 @@
     .card-main h3{font-size:30px;margin:0 0 6px;letter-spacing:-.03em}
     .card-main p{font-size:16px;margin:0;color:var(--muted)}
     .price-pill{position:absolute;right:10px;bottom:12px;background:var(--sun);color:#52380b;border-radius:22px;padding:17px 22px;font-weight:900;box-shadow:0 12px 25px rgba(240,184,74,.26);transform:rotate(-5deg)}
+
     section{padding:82px 0}
     .section-head{max-width:720px;margin-bottom:34px}
     .section-head h2{font-size:clamp(34px,5vw,52px);letter-spacing:-.045em;line-height:1.08;margin:0 0 14px}
@@ -83,6 +144,7 @@
     .whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25D366;color:white;text-decoration:none;display:grid;place-items:center;font-size:28px;box-shadow:0 14px 35px rgba(0,0,0,.22);transition:.2s ease}
     .whatsapp-float:hover{transform:translateY(-3px) scale(1.03)}
     .lang{font-size:12px;color:var(--muted);margin-top:8px}
+
     @media (max-width:900px){
       .nav-links a:not(.btn){display:none}
       .hero-grid,.dry-grid{grid-template-columns:1fr}
@@ -108,8 +170,10 @@
       --sea:#11aaa8;--sea-dark:#087c80;--sun:#83d5cf;
       --shadow:0 24px 70px rgba(16,30,74,.14);--radius:0;
     }
+
     body{font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink)}
     body:before{content:"";position:fixed;z-index:100;left:0;top:0;height:3px;width:var(--scroll-progress,0%);background:var(--sea);box-shadow:0 0 14px rgba(17,170,168,.65)}
+
     .nav{position:fixed;left:0;right:0;top:0;background:transparent;border-bottom:1px solid transparent;transition:.35s ease;color:white}
     .nav.is-scrolled{background:rgba(251,250,246,.94);backdrop-filter:blur(18px);border-color:rgba(24,38,83,.12);color:var(--ink)}
     .brand{color:inherit;text-transform:uppercase;letter-spacing:.12em;font-size:13px}
@@ -121,36 +185,42 @@
     .nav-links a:not(.btn){position:relative}
     .nav-links a:not(.btn):after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--sea);transition:right .35s cubic-bezier(.22,1,.36,1)}
     .nav-links a:not(.btn):hover:after{right:0}
+
     .btn{border-radius:0;text-transform:uppercase;letter-spacing:.12em;font-size:12px;position:relative;overflow:hidden;transition:.35s cubic-bezier(.22,1,.36,1)}
     .btn:after{content:"";position:absolute;inset:0;background:rgba(255,255,255,.15);transform:translateX(-105%) skewX(-16deg);transition:transform .55s cubic-bezier(.22,1,.36,1)}
     .btn:hover:after{transform:translateX(105%) skewX(-16deg)}
     .btn-primary{background:var(--sea);box-shadow:none}
+    .btn-soft{background:transparent;border-color:rgba(255,255,255,.55);color:white}
+
     .hero{min-height:100svh;display:grid;align-items:center;background:var(--ink);color:white;padding:130px 0 90px}
     .hero:before{width:540px;height:540px;background:radial-gradient(circle,rgba(17,170,168,.24),transparent 67%);right:-90px;top:10%}
-    .hero:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(circle at 12px 12px,rgba(17,170,168,.8) 0 1px,transparent 1.5px);background-size:42px 42px;mask-image:linear-gradient(90deg,transparent 20%,black)}
+    .hero:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;background-image:radial-gradient(circle at 12px 12px,rgba(17,170,168,.8) 0 1px,transparent 1.5px);background-size:42px 42px;mask-image:linear-gradient(90deg,transparent 20%,black)}
+
     .eyebrow{border-radius:0;background:transparent;color:var(--sun);padding:0;letter-spacing:.22em}
     .eyebrow:before{content:"";width:42px;height:1px;background:currentColor}
     h1{text-transform:uppercase;color:white;font-size:clamp(54px,7vw,92px);line-height:.92;letter-spacing:-.04em}
     h1:before{content:"Freshly pressed";display:block;text-transform:none;font:italic 400 .48em Georgia,serif;letter-spacing:0;color:var(--sun);margin-bottom:15px}
     .hero p{font-family:Georgia,serif;color:rgba(255,255,255,.76)}
-    .btn-soft{background:transparent;border-color:rgba(255,255,255,.55);color:white}
     .mini-note{color:rgba(255,255,255,.58);text-transform:uppercase;letter-spacing:.13em;font-size:11px}
+
     .visual{perspective:1000px;min-height:540px}
     .blob{inset:20px 20px 20px 40px;border-radius:0;background:transparent;border:1px solid var(--sea);transform:none}
     .card-main{inset:55px 0 0 75px;border-radius:0;background:linear-gradient(145deg,#22356d,#111d42);color:white;border:1px solid rgba(131,213,207,.75);box-shadow:0 38px 90px rgba(0,0,0,.34);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform-style:preserve-3d;transition:transform .15s ease-out;overflow:hidden}
     .card-main:before{content:"";position:absolute;inset:14px;border:1px solid rgba(17,170,168,.4)}
-    .card-main:after{content:"";position:absolute;inset:auto 0 0;height:32%;background:radial-gradient(circle at 20% 30%,rgba(17,170,168,.18) 0 2px,transparent 3px);background-size:32px 32px}
     .card-main h3{font-size:30px;text-transform:uppercase;letter-spacing:.08em;position:relative;z-index:2}
     .card-main p,.card-main .lang{color:rgba(255,255,255,.68);position:relative;z-index:2}
+
     .line-hanger{width:115px;height:105px;margin-bottom:22px;position:relative;z-index:2}
     .line-hanger:before{content:"";position:absolute;width:30px;height:30px;border:2px solid var(--sun);border-left-color:transparent;border-bottom-color:transparent;border-radius:50%;left:42px;top:0;transform:rotate(-28deg)}
     .line-hanger:after{content:"";position:absolute;left:10px;right:10px;bottom:8px;height:48px;border:2px solid var(--sun);clip-path:polygon(50% 0,100% 100%,0 100%);background:transparent}
-    .price-pill{border-radius:0;background:var(--sea);color:white;right:-12px;bottom:28px;transform:rotate(-4deg)}
+    .price-pill{border-radius:0;background:var(--sea);color:white;right:-12px;bottom:28px;transform:rotate(-4deg);z-index:3}
+
     section{padding:105px 0}
     .section-head{text-align:center;margin-inline:auto}
     .section-head h2{text-transform:uppercase;color:var(--ink);font-size:clamp(42px,5.5vw,68px)}
     .section-head p{font-family:Georgia,serif}
-    .services{background:white}
+    .services{background:white;position:relative;overflow:hidden}
+
     .pricing-grid{gap:0;border-top:1px solid rgba(24,38,83,.15);border-bottom:1px solid rgba(24,38,83,.15)}
     .price-card{border-radius:0;box-shadow:none;border:0;border-right:1px solid rgba(24,38,83,.15);min-height:285px;transition:.4s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden}
     .price-card:last-child{border-right:0}
@@ -170,7 +240,7 @@
     .price-card h3{font-family:Georgia,serif;font-weight:400;font-size:21px}
     .price{font-size:43px;color:var(--ink);transition:color .35s ease}
     .price-card:hover .price{color:white}
-    .dry-card{border-radius:0;background:var(--ink);border:1px solid var(--sea)}
+    .dry-card{border-radius:0;background:var(--ink);border:1px solid var(--sea);position:relative;overflow:hidden}
     .contact-card{border-radius:0;background:white;border:1px solid rgba(24,38,83,.15)}
     .steps{gap:1px;background:rgba(24,38,83,.15);border:1px solid rgba(24,38,83,.15)}
     .step{border:0;border-radius:0;min-height:285px;padding:38px;background:var(--paper);transition:.35s ease}
@@ -183,23 +253,451 @@
     .wa-line:after{content:"";position:absolute;inset:6px;border:2px solid white;border-left-color:transparent;border-top-color:transparent;border-radius:50%;transform:rotate(15deg)}
     footer{background:var(--ink);color:rgba(255,255,255,.7)}
     footer strong{color:white;text-transform:uppercase;letter-spacing:.1em}
+
     [data-reveal]{opacity:0;transform:translateY(42px);transition:opacity .85s cubic-bezier(.22,1,.36,1),transform .85s cubic-bezier(.22,1,.36,1)}
     [data-reveal].is-visible{opacity:1;transform:none}
-    @media(max-width:900px){.nav{background:var(--ink)}.pricing-grid{gap:1px}.price-card{border-right:0}.hero{text-align:center}.hero .eyebrow{justify-content:center}.hero-actions{justify-content:center}.mini-note{color:rgba(255,255,255,.6)}}
-    @media(max-width:560px){.visual{min-height:410px}.card-main{inset:45px 0 0 28px}.blob{inset:10px 18px 35px 0}.price-card{min-height:240px}}
-    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}[data-reveal]{opacity:1!important;transform:none!important}}
+
+    /* Final controlled transparent illustrations */
+    .hero-grid{position:relative;z-index:2}
+
+    .hero-flower{
+      position:absolute;
+      right:6vw;
+      top:185px;
+      width:clamp(160px,18vw,280px);
+      height:auto;
+      opacity:.15;
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .hero-fern{
+      position:absolute;
+      left:5vw;
+      bottom:22px;
+      width:clamp(130px,16vw,230px);
+      height:auto;
+      opacity:.16;
+      z-index:1;
+      pointer-events:none;
+    }
+
+    .card-floral{
+      position:absolute;
+      right:-38px;
+      bottom:-50px;
+      width:210px;
+      opacity:.14;
+      z-index:1;
+      pointer-events:none;
+      transform:rotate(-8deg);
+    }
+
+    .card-main .hanger,
+    .card-main h3,
+    .card-main p,
+    .card-main .lang{
+      position:relative;
+      z-index:2;
+    }
+
+    .services:after{
+      content:"";
+      position:absolute;
+      right:-95px;
+      top:70px;
+      width:360px;
+      height:360px;
+      background:url("assets/Ilustraciones_RGB-48.png") center/contain no-repeat;
+      opacity:.055;
+      pointer-events:none;
+      z-index:0;
+    }
+    .services > .container{position:relative;z-index:1}
+
+    #tintoreria{position:relative;overflow:hidden}
+    #tintoreria:before{
+      content:"";
+      position:absolute;
+      left:-70px;
+      bottom:20px;
+      width:320px;
+      height:320px;
+      background:url("assets/Ilustraciones_RGB-41.png") center/contain no-repeat;
+      opacity:.055;
+      pointer-events:none;
+      z-index:0;
+    }
+    #tintoreria > .container{position:relative;z-index:1}
+
+    .cta-box{position:relative;overflow:hidden}
+    .cta-box:after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      bottom:-95px;
+      width:340px;
+      height:340px;
+      background:url("assets/Ilustraciones_RGB-49.png") center/contain no-repeat;
+      opacity:.13;
+      pointer-events:none;
+      z-index:0;
+    }
+    .cta-box > *{position:relative;z-index:1}
+
+    @media(max-width:900px){
+      .nav{background:var(--ink)}
+      .pricing-grid{gap:1px}
+      .price-card{border-right:0}
+      .hero{text-align:center}
+      .hero .eyebrow{justify-content:center}
+      .hero-actions{justify-content:center}
+      .mini-note{color:rgba(255,255,255,.6)}
+      .nav-actions{margin-left:auto}
+      .hero-flower{right:-80px;top:145px;width:260px;opacity:.10}
+      .hero-fern{left:15px;bottom:12px;width:160px;opacity:.10}
+      .card-floral{width:165px;opacity:.10}
+    }
+
+    @media(max-width:560px){
+      .visual{min-height:410px}
+      .card-main{inset:45px 0 0 28px}
+      .blob{inset:10px 18px 35px 0}
+      .price-card{min-height:240px}
+      .nav-inner{gap:10px}
+      .lang-toggle button{padding:7px 8px}
+      .nav-links .btn{padding:12px 14px}
+    }
+
+    @media(prefers-reduced-motion:reduce){
+      *,*:before,*:after{animation:none!important;transition:none!important}
+      [data-reveal]{opacity:1!important;transform:none!important}
+    }
+
+    /* Más assets visuales y texturas del cliente */
+    .hero{
+      isolation:isolate;
+    }
+
+    .hero-texture{
+      position:absolute;
+      inset:0;
+      background:url("assets/texture-dark.jpeg") center/560px auto repeat;
+      opacity:.095;
+      mix-blend-mode:screen;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .hero-flower,
+    .hero-fern,
+    .card-floral,
+    .price-asset,
+    .contact-asset,
+    .step-asset,
+    .footer-asset {
+      filter: brightness(0) saturate(100%) invert(76%) sepia(42%) saturate(533%) hue-rotate(127deg) brightness(94%) contrast(91%);
+    }
+
+    .hero-flower{
+      right:3vw !important;
+      top:155px !important;
+      width:clamp(210px,24vw,360px) !important;
+      opacity:.26 !important;
+    }
+
+    .hero-fern{
+      left:4vw !important;
+      bottom:55px !important;
+      width:clamp(170px,18vw,270px) !important;
+      opacity:.24 !important;
+    }
+
+    .card-floral{
+      right:-20px !important;
+      bottom:-25px !important;
+      width:250px !important;
+      opacity:.28 !important;
+    }
+
+    .services{
+      background:
+        linear-gradient(rgba(255,255,255,.91),rgba(255,255,255,.91)),
+        url("assets/texture-light.jpeg") center/560px auto repeat !important;
+    }
+
+    .services:after{
+      opacity:.095 !important;
+      right:-70px !important;
+      top:55px !important;
+      width:390px !important;
+      height:390px !important;
+    }
+
+    .pricing-grid{
+      position:relative;
+      z-index:1;
+      background:rgba(255,255,255,.35);
+      backdrop-filter:blur(2px);
+    }
+
+    .price-card{
+      position:relative;
+      background:rgba(255,255,255,.82) !important;
+    }
+
+    .price-card:hover{
+      background:var(--ink) !important;
+    }
+
+    .price-asset{
+      position:absolute;
+      left:50%;
+      top:50%;
+      width:120px;
+      opacity:.055;
+      pointer-events:none;
+      transform:translate(-50%,-50%);
+      z-index:0;
+    }
+
+    .price-card > *:not(.price-asset){
+      position:relative;
+      z-index:1;
+    }
+
+    #tintoreria{
+      background:
+        linear-gradient(rgba(251,250,246,.94),rgba(251,250,246,.94)),
+        url("assets/texture-light.jpeg") center/620px auto repeat;
+    }
+
+    .dry-card{
+      background:
+        linear-gradient(rgba(24,38,83,.92),rgba(24,38,83,.92)),
+        url("assets/texture-dark.jpeg") center/560px auto repeat !important;
+    }
+
+    .dry-card:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:url("assets/Ilustraciones_RGB-48.png") left -80px bottom -95px/300px auto no-repeat;
+      opacity:.13;
+      filter: brightness(0) saturate(100%) invert(76%) sepia(42%) saturate(533%) hue-rotate(127deg) brightness(94%) contrast(91%);
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .contact-card{
+      position:relative;
+      overflow:hidden;
+      background:
+        linear-gradient(rgba(255,255,255,.90),rgba(255,255,255,.90)),
+        url("assets/texture-light.jpeg") center/560px auto repeat !important;
+    }
+
+    .contact-asset{
+      position:absolute;
+      right:-48px;
+      bottom:-72px;
+      width:260px;
+      opacity:.10;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .contact-card > *:not(.contact-asset){
+      position:relative;
+      z-index:1;
+    }
+
+    .step{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .step-asset{
+      position:absolute;
+      right:-35px;
+      bottom:-45px;
+      width:150px;
+      opacity:.055;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    .step > *:not(.step-asset){
+      position:relative;
+      z-index:1;
+    }
+
+    .cta-box{
+      background:
+        linear-gradient(135deg,rgba(8,124,128,.93),rgba(17,170,168,.92)),
+        url("assets/texture-dark.jpeg") center/560px auto repeat !important;
+    }
+
+    .cta-box:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      opacity:.16;
+      background:url("assets/texture-dark.jpeg") center/560px auto repeat;
+      mix-blend-mode:screen;
+      pointer-events:none;
+      z-index:0;
+    }
+
+    footer{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .footer-asset{
+      position:absolute;
+      right:4vw;
+      bottom:-70px;
+      width:220px;
+      opacity:.08;
+      pointer-events:none;
+    }
+
+    @media(max-width:900px){
+      .hero-texture{opacity:.07}
+      .services:after{opacity:.06}
+      .price-asset{width:96px}
+      .contact-asset{width:210px;opacity:.07}
+      .footer-asset{display:none}
+    }
+
+
+    /* Corrección: pájaros reales sin rectángulos de fondo */
+    .bird-hero-main,
+    .bird-hero-small,
+    .bird-card,
+    .bird-service,
+    .bird-dry,
+    .bird-cta{
+      position:absolute;
+      pointer-events:none;
+      z-index:1;
+      opacity:.18;
+      filter:none;
+    }
+
+    .bird-hero-main{
+      right:2vw;
+      top:235px;
+      width:clamp(220px,24vw,380px);
+      opacity:.24;
+      transform:rotate(-4deg);
+    }
+
+    .bird-hero-small{
+      left:42vw;
+      top:210px;
+      width:clamp(100px,10vw,165px);
+      opacity:.13;
+      transform:scaleX(-1) rotate(5deg);
+    }
+
+    .bird-card{
+      right:-42px;
+      top:70px;
+      width:205px;
+      opacity:.16;
+      transform:rotate(-4deg);
+    }
+
+    .services .bird-service{
+      left:-52px;
+      top:118px;
+      width:280px;
+      opacity:.055;
+      transform:scaleX(-1);
+      z-index:0;
+    }
+
+    .dry-card .bird-dry{
+      right:-65px;
+      top:20px;
+      width:245px;
+      opacity:.12;
+      z-index:0;
+      transform:rotate(-5deg);
+    }
+
+    .cta-box .bird-cta{
+      left:24px;
+      bottom:-44px;
+      width:230px;
+      opacity:.12;
+      transform:scaleX(-1) rotate(3deg);
+      z-index:0;
+    }
+
+    /* Bajar la textura que se veía demasiado fuerte */
+    .hero-texture{
+      opacity:.055 !important;
+    }
+
+    .services{
+      background:
+        linear-gradient(rgba(255,255,255,.94),rgba(255,255,255,.94)),
+        url("assets/texture-light.jpeg") center/560px auto repeat !important;
+    }
+
+    .cta-box:before{
+      opacity:.09 !important;
+    }
+
+    .dry-card > *:not(.bird-dry),
+    .cta-box > *:not(.bird-cta){
+      position:relative;
+      z-index:1;
+    }
+
+    @media(max-width:900px){
+      .bird-hero-main{
+        right:-115px;
+        top:210px;
+        width:320px;
+        opacity:.13;
+      }
+      .bird-hero-small{
+        display:none;
+      }
+      .bird-card{
+        width:150px;
+        opacity:.10;
+      }
+      .bird-dry{
+        width:190px;
+        opacity:.09;
+      }
+    }
+
   </style>
 </head>
-<body>
+<body data-lang="es">
   <nav class="nav">
     <div class="container nav-inner">
       <a class="brand" href="#inicio" aria-label="Ir al inicio">
         <span class="brand-mark" aria-hidden="true"><span class="seal-core"></span></span>
         <span>Sayulita Dry Cleaners</span>
       </a>
+
       <div class="nav-links">
-        <a href="#servicios">Servicios</a>
-        <a href="#tintoreria">Tintorería</a>
+        <a href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a>
+        <a href="#tintoreria"><span class="es">Tintorería</span><span class="en">Dry Cleaning</span></a>
+      </div>
+
+      <div class="nav-actions">
+        <div class="lang-toggle" aria-label="Cambiar idioma">
+          <button type="button" data-lang-btn="es">ES</button>
+          <button type="button" data-lang-btn="en">EN</button>
+        </div>
         <a class="btn btn-primary js-whatsapp" href="#">WhatsApp</a>
       </div>
     </div>
@@ -207,25 +705,46 @@
 
   <main>
     <header id="inicio" class="hero">
+      <div class="hero-texture" aria-hidden="true"></div>
+      <img class="hero-flower" src="assets/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
+      <img class="hero-fern" src="assets/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
+
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Cuidado de prendas en Sayulita</span>
-          <h1>Tu ropa lista, limpia y bien presentada.</h1>
-          <p>Servicio de planchado y prensado con precios claros. También contamos con tintorería bajo solicitud.</p>
+          <span class="eyebrow">
+            <span class="es">Cuidado de prendas en Sayulita</span>
+            <span class="en">Garment care in Sayulita</span>
+          </span>
+
+          <h1>
+            <span class="es">Tu ropa lista, limpia y bien presentada.</span>
+            <span class="en">Your clothes ready, clean and well presented.</span>
+          </h1>
+
+          <p class="es">Servicio de planchado y prensado con precios claros. También contamos con tintorería bajo solicitud.</p>
+          <p class="en">Ironing and pressing service with clear prices. Dry cleaning is also available upon request.</p>
+
           <div class="hero-actions">
-            <a class="btn btn-primary js-whatsapp" href="#">Solicitar por WhatsApp</a>
-            <a class="btn btn-soft" href="#servicios">Ver precios</a>
+            <a class="btn btn-primary js-whatsapp" href="#"><span class="es">Solicitar por WhatsApp</span><span class="en">Request via WhatsApp</span></a>
+            <a class="btn btn-soft" href="#servicios"><span class="es">Ver precios</span><span class="en">View prices</span></a>
           </div>
-          <div class="mini-note">Atención directa · Cotización rápida · Servicio local</div>
+
+          <div class="mini-note">
+            <span class="es">Atención directa · Cotización rápida · Servicio local</span>
+            <span class="en">Direct attention · Quick quote · Local service</span>
+          </div>
         </div>
+
         <div class="visual" aria-hidden="true">
           <div class="blob"></div>
           <div class="card-main">
+            <img class="card-floral" src="assets/Ilustraciones_RGB-49.png" alt="" aria-hidden="true">
             <div class="hanger line-hanger" aria-hidden="true"></div>
-            <h3>Planchado &amp; Prensado</h3>
-            <p>Camisas, pantalones, vestidos, faldas y shorts.</p>
-            <div class="lang">Ironing &amp; pressing service available</div>
-            <div class="price-pill">Desde $20 MXN</div>
+            <h3><span class="es">Planchado &amp; Prensado</span><span class="en">Ironing &amp; Pressing</span></h3>
+            <p class="es">Camisas, pantalones, vestidos, faldas y shorts.</p>
+            <p class="en">Shirts, pants, dresses, skirts and shorts.</p>
+            <div class="lang"><span class="es">Ironing &amp; pressing service available</span><span class="en">Servicio de planchado y prensado disponible</span></div>
+            <div class="price-pill"><span class="es">Desde $20 MXN</span><span class="en">From $20 MXN</span></div>
           </div>
         </div>
       </div>
@@ -234,15 +753,17 @@
     <section id="servicios" class="services">
       <div class="container">
         <div class="section-head">
-          <h2>Precios de planchado y prensado</h2>
-          <p>Tarifas por prenda. Para piezas especiales o grandes cantidades, contáctanos directamente.</p>
+          <h2><span class="es">Precios de planchado y prensado</span><span class="en">Ironing and pressing prices</span></h2>
+          <p class="es">Tarifas por prenda. Para piezas especiales o grandes cantidades, contáctanos directamente.</p>
+          <p class="en">Rates per garment. For special pieces or large quantities, contact us directly.</p>
         </div>
+
         <div class="pricing-grid">
-          <article class="price-card"><div class="icon icon-shirt" aria-hidden="true"></div><h3>Camisas</h3><div class="price">$20 <small>MXN</small></div></article>
-          <article class="price-card"><div class="icon icon-pants" aria-hidden="true"></div><h3>Pantalones</h3><div class="price">$20 <small>MXN</small></div></article>
-          <article class="price-card"><div class="icon icon-dress" aria-hidden="true"></div><h3>Vestidos</h3><div class="price">$50 <small>MXN</small></div></article>
-          <article class="price-card"><div class="icon icon-skirt" aria-hidden="true"></div><h3>Faldas</h3><div class="price">$20 <small>MXN</small></div></article>
-          <article class="price-card"><div class="icon icon-shorts" aria-hidden="true"></div><h3>Shorts</h3><div class="price">$20 <small>MXN</small></div></article>
+          <article class="price-card"><img class="price-asset" src="assets/Ilustraciones_RGB-48.png" alt="" aria-hidden="true"><div class="icon icon-shirt" aria-hidden="true"></div><h3><span class="es">Camisas</span><span class="en">Shirts</span></h3><div class="price">$20 <small>MXN</small></div></article>
+          <article class="price-card"><img class="price-asset" src="assets/Ilustraciones_RGB-49.png" alt="" aria-hidden="true"><div class="icon icon-pants" aria-hidden="true"></div><h3><span class="es">Pantalones</span><span class="en">Pants</span></h3><div class="price">$20 <small>MXN</small></div></article>
+          <article class="price-card"><img class="price-asset" src="assets/Ilustraciones_RGB-41.png" alt="" aria-hidden="true"><div class="icon icon-dress" aria-hidden="true"></div><h3><span class="es">Vestidos</span><span class="en">Dresses</span></h3><div class="price">$50 <small>MXN</small></div></article>
+          <article class="price-card"><img class="price-asset" src="assets/Ilustraciones_RGB-48.png" alt="" aria-hidden="true"><div class="icon icon-skirt" aria-hidden="true"></div><h3><span class="es">Faldas</span><span class="en">Skirts</span></h3><div class="price">$20 <small>MXN</small></div></article>
+          <article class="price-card"><img class="price-asset" src="assets/Ilustraciones_RGB-49.png" alt="" aria-hidden="true"><div class="icon icon-shorts" aria-hidden="true"></div><h3>Shorts</h3><div class="price">$20 <small>MXN</small></div></article>
         </div>
       </div>
     </section>
@@ -251,18 +772,31 @@
       <div class="container dry-grid">
         <article class="dry-card">
           <span class="eyebrow">Dry Cleaning</span>
-          <h2>Tintorería bajo solicitud</h2>
-          <p>El costo depende del tipo de prenda, material, tamaño, manchas y cuidados especiales.</p>
-          <ul>
+          <h2><span class="es">Tintorería bajo solicitud</span><span class="en">Dry cleaning upon request</span></h2>
+
+          <p class="es">El costo depende del tipo de prenda, material, tamaño, manchas y cuidados especiales.</p>
+          <p class="en">Pricing depends on garment type, material, size, stains and special care requirements.</p>
+
+          <ul class="es">
             <li>Disponibilidad sujeta a confirmación.</li>
             <li>Los precios pueden variar.</li>
             <li>Puedes enviar una foto de la prenda por WhatsApp.</li>
           </ul>
+          <ul class="en">
+            <li>Availability subject to confirmation.</li>
+            <li>Prices may vary.</li>
+            <li>You can send a photo of the garment via WhatsApp.</li>
+          </ul>
         </article>
+
         <article class="contact-card">
-          <h3>Cuéntanos qué prenda necesitas atender</h3>
-          <p>Envíanos una fotografía o una breve descripción. Te confirmaremos disponibilidad y costo directamente.</p>
-          <div><a class="btn btn-primary js-whatsapp" href="#">Consultar precio y disponibilidad</a></div>
+          <img class="contact-asset" src="assets/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
+          <h3><span class="es">Cuéntanos qué prenda necesitas atender</span><span class="en">Tell us what garment you need service for</span></h3>
+
+          <p class="es">Envíanos una fotografía o una breve descripción. Te confirmaremos disponibilidad y costo directamente.</p>
+          <p class="en">Send us a photo or a short description. We will confirm availability and pricing directly.</p>
+
+          <div><a class="btn btn-primary js-whatsapp" href="#"><span class="es">Consultar precio y disponibilidad</span><span class="en">Check price and availability</span></a></div>
         </article>
       </div>
     </section>
@@ -270,12 +804,33 @@
     <section style="padding-top:20px">
       <div class="container">
         <div class="section-head">
-          <h2>Así de sencillo</h2>
+          <h2><span class="es">Así de sencillo</span><span class="en">Simple as that</span></h2>
         </div>
+
         <div class="steps">
-          <article class="step"><div class="step-num">1</div><h3>Escríbenos</h3><p>Abre WhatsApp desde cualquiera de los botones de la página.</p></article>
-          <article class="step"><div class="step-num">2</div><h3>Describe tu prenda</h3><p>Indica cantidad, tipo de prenda y, si aplica, envía una fotografía.</p></article>
-          <article class="step"><div class="step-num">3</div><h3>Recibe confirmación</h3><p>Te compartiremos precio, disponibilidad y detalles del servicio.</p></article>
+          <article class="step">
+            <img class="step-asset" src="assets/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
+            <div class="step-num">1</div>
+            <h3><span class="es">Escríbenos</span><span class="en">Message us</span></h3>
+            <p class="es">Abre WhatsApp desde cualquiera de los botones de la página.</p>
+            <p class="en">Open WhatsApp from any button on the page.</p>
+          </article>
+
+          <article class="step">
+            <img class="step-asset" src="assets/Ilustraciones_RGB-49.png" alt="" aria-hidden="true">
+            <div class="step-num">2</div>
+            <h3><span class="es">Describe tu prenda</span><span class="en">Describe your garment</span></h3>
+            <p class="es">Indica cantidad, tipo de prenda y, si aplica, envía una fotografía.</p>
+            <p class="en">Tell us the quantity, garment type and, if needed, send a photo.</p>
+          </article>
+
+          <article class="step">
+            <img class="step-asset" src="assets/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
+            <div class="step-num">3</div>
+            <h3><span class="es">Recibe confirmación</span><span class="en">Receive confirmation</span></h3>
+            <p class="es">Te compartiremos precio, disponibilidad y detalles del servicio.</p>
+            <p class="en">We will share pricing, availability and service details.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -284,18 +839,20 @@
       <div class="container">
         <div class="cta-box">
           <div>
-            <h2>¿Listo para cuidar mejor tus prendas?</h2>
-            <p>Solicita información directamente por WhatsApp.</p>
+            <h2><span class="es">¿Listo para cuidar mejor tus prendas?</span><span class="en">Ready to take better care of your clothes?</span></h2>
+            <p class="es">Solicita información directamente por WhatsApp.</p>
+            <p class="en">Request information directly through WhatsApp.</p>
           </div>
-          <a class="btn js-whatsapp" href="#">Abrir WhatsApp</a>
+          <a class="btn js-whatsapp" href="#"><span class="es">Abrir WhatsApp</span><span class="en">Open WhatsApp</span></a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
+    <img class="footer-asset" src="assets/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
     <div class="container footer-inner">
-      <div><strong>Sayulita Dry Cleaners</strong><br>Planchado, prensado y tintorería bajo solicitud.</div>
+      <div><strong>Sayulita Dry Cleaners</strong><br><span class="es">Planchado, prensado y tintorería bajo solicitud.</span><span class="en">Ironing, pressing and dry cleaning upon request.</span></div>
       <div>© <span id="year"></span> Sayulita Dry Cleaners</div>
     </div>
   </footer>
@@ -303,24 +860,42 @@
   <a class="whatsapp-float js-whatsapp" href="#" aria-label="Contactar por WhatsApp"><span class="wa-line" aria-hidden="true"></span></a>
 
   <script>
-    // EDITA SOLO ESTAS DOS LÍNEAS CUANDO TENGAS EL NÚMERO REAL.
-    const whatsappNumber = "5210000000000"; // México: 52 + lada + número, sin espacios ni signos.
-    const whatsappMessage = "Hola, encontré Sayulita Dry Cleaners en internet y quisiera solicitar información sobre sus servicios.";
+    const whatsappNumber = "5210000000000";
+    const whatsappMessages = {
+      es: "Hola, encontré Sayulita Dry Cleaners en internet y quisiera solicitar información sobre sus servicios.",
+      en: "Hi, I found Sayulita Dry Cleaners online and would like to ask about your services."
+    };
 
-    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-    document.querySelectorAll('.js-whatsapp').forEach(link => {
-      link.href = whatsappUrl;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
+    const body = document.body;
+
+    function updateLanguage(lang){
+      body.dataset.lang = lang;
+      document.documentElement.lang = lang;
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessages[lang])}`;
+      document.querySelectorAll('.js-whatsapp').forEach(link => {
+        link.href = whatsappUrl;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+      });
+    }
+
+    document.querySelectorAll('[data-lang-btn]').forEach(btn => {
+      btn.addEventListener('click', () => updateLanguage(btn.dataset.langBtn));
     });
+
     document.getElementById('year').textContent = new Date().getFullYear();
 
     const nav = document.querySelector('.nav');
     const revealTargets = document.querySelectorAll('section, .price-card, .step, .cta-box');
     revealTargets.forEach(el => el.setAttribute('data-reveal',''));
+
     const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-      if(entry.isIntersecting){ entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
     }), {threshold:.12});
+
     revealTargets.forEach(el => observer.observe(el));
 
     const onScroll = () => {
@@ -328,18 +903,24 @@
       const max = document.documentElement.scrollHeight - innerHeight;
       document.body.style.setProperty('--scroll-progress', `${max > 0 ? window.scrollY / max * 100 : 0}%`);
     };
-    addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+    addEventListener('scroll', onScroll, {passive:true});
+    onScroll();
 
     const poster = document.querySelector('.card-main');
     const visual = document.querySelector('.visual');
+
     if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches){
       visual.addEventListener('mousemove', e => {
         const r = visual.getBoundingClientRect();
         const x = (e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
         poster.style.transform = `rotateY(${x*10}deg) rotateX(${-y*8}deg)`;
       });
+
       visual.addEventListener('mouseleave',()=>poster.style.transform='rotateY(0) rotateX(0)');
     }
+
+    updateLanguage('es');
   </script>
 </body>
 </html>
