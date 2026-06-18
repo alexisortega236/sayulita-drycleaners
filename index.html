@@ -572,113 +572,659 @@
     }
 
 
-    /* Corrección: pájaros reales sin rectángulos de fondo */
-    .bird-hero-main,
-    .bird-hero-small,
-    .bird-card,
-    .bird-service,
-    .bird-dry,
-    .bird-cta{
+    /* Pájaros correctos del cliente: RGB-50, CMYK-50 y RGB-55 */
+    .bird-real-main,
+    .bird-real-small,
+    .bird-real-card,
+    .bird-real-services,
+    .bird-real-dry,
+    .bird-real-cta{
       position:absolute;
       pointer-events:none;
       z-index:1;
-      opacity:.18;
-      filter:none;
+      height:auto;
+      filter: brightness(0) saturate(100%) invert(76%) sepia(42%) saturate(533%) hue-rotate(127deg) brightness(94%) contrast(91%);
     }
 
-    .bird-hero-main{
+    .bird-real-main{
       right:2vw;
-      top:235px;
-      width:clamp(220px,24vw,380px);
-      opacity:.24;
-      transform:rotate(-4deg);
-    }
-
-    .bird-hero-small{
-      left:42vw;
       top:210px;
-      width:clamp(100px,10vw,165px);
-      opacity:.13;
-      transform:scaleX(-1) rotate(5deg);
-    }
-
-    .bird-card{
-      right:-42px;
-      top:70px;
-      width:205px;
-      opacity:.16;
+      width:clamp(260px,28vw,470px);
+      opacity:.36;
       transform:rotate(-4deg);
     }
 
-    .services .bird-service{
-      left:-52px;
-      top:118px;
-      width:280px;
-      opacity:.055;
-      transform:scaleX(-1);
-      z-index:0;
+    .bird-real-small{
+      left:40vw;
+      top:225px;
+      width:clamp(120px,12vw,210px);
+      opacity:.18;
+      transform:scaleX(-1) rotate(7deg);
     }
 
-    .dry-card .bird-dry{
-      right:-65px;
-      top:20px;
-      width:245px;
-      opacity:.12;
-      z-index:0;
+    .bird-real-card{
+      right:-36px;
+      top:62px;
+      width:230px;
+      opacity:.26;
       transform:rotate(-5deg);
     }
 
-    .cta-box .bird-cta{
+    .bird-real-services{
+      left:-65px;
+      top:105px;
+      width:310px;
+      opacity:.075;
+      transform:scaleX(-1) rotate(2deg);
+      z-index:0;
+    }
+
+    .bird-real-dry{
+      right:-65px;
+      top:22px;
+      width:300px;
+      opacity:.19;
+      transform:rotate(-5deg);
+      z-index:0;
+    }
+
+    .bird-real-cta{
       left:24px;
-      bottom:-44px;
-      width:230px;
-      opacity:.12;
+      bottom:-58px;
+      width:270px;
+      opacity:.18;
       transform:scaleX(-1) rotate(3deg);
       z-index:0;
     }
 
-    /* Bajar la textura que se veía demasiado fuerte */
-    .hero-texture{
-      opacity:.055 !important;
+    .hero{
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
     }
 
-    .services{
-      background:
-        linear-gradient(rgba(255,255,255,.94),rgba(255,255,255,.94)),
-        url("assets/texture-light.jpeg") center/560px auto repeat !important;
+    .hero-grid{
+      position:relative;
+      z-index:2;
     }
 
-    .cta-box:before{
-      opacity:.09 !important;
+    .card-main,
+    .services,
+    .dry-card,
+    .cta-box{
+      position:relative;
+      overflow:hidden;
     }
 
-    .dry-card > *:not(.bird-dry),
-    .cta-box > *:not(.bird-cta){
+    .card-main > *:not(.bird-real-card),
+    .services > .container,
+    .dry-card > *:not(.bird-real-dry),
+    .cta-box > *:not(.bird-real-cta){
       position:relative;
       z-index:1;
     }
 
+    .hero-texture{
+      opacity:.052 !important;
+    }
+
     @media(max-width:900px){
-      .bird-hero-main{
-        right:-115px;
-        top:210px;
-        width:320px;
-        opacity:.13;
+      .bird-real-main{
+        right:-135px;
+        top:205px;
+        width:360px;
+        opacity:.18;
       }
-      .bird-hero-small{
+
+      .bird-real-small{
         display:none;
       }
-      .bird-card{
-        width:150px;
-        opacity:.10;
+
+      .bird-real-card{
+        width:160px;
+        opacity:.14;
       }
-      .bird-dry{
-        width:190px;
-        opacity:.09;
+
+      .bird-real-dry{
+        width:210px;
+        opacity:.11;
       }
     }
 
-  </style>
+    /* =====================================================
+   Reset del intento de patrón global
+   ===================================================== */
+
+/* Quitar patrón grande que estaba rompiendo el hero */
+.hero::before,
+.hero::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Restaurar capas normales */
+.hero > *,
+.hero-grid,
+.hero-inner,
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Volver a mostrar contenido correctamente */
+.hero {
+  min-height: 100svh !important;
+  display: grid !important;
+  align-items: end !important;
+  overflow: hidden !important;
+}
+
+/* Ocultar pájaros individuales anteriores para limpiar */
+.bird-real-main,
+.bird-real-small,
+.bird-real-card,
+.bird-hero-main,
+.bird-hero-secondary,
+.bird-hero-top,
+.bird-card-main,
+.day-bird-hero-main,
+.day-bird-hero-small,
+.day-bird-card,
+.nawalli-bird {
+  display: none !important;
+}
+
+/* Nuevo patrón controlado: solo en una capa propia */
+.hero-pattern-birds {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .12;
+  background-image:
+    url("assets/Ilustraciones_RGB-50.png"),
+    url("assets/Ilustraciones_RGB-55.png"),
+    url("assets/Ilustraciones_RGB-41.png"),
+    url("assets/Ilustraciones_RGB-48.png");
+  background-size:
+    210px auto,
+    170px auto,
+    250px auto,
+    230px auto;
+  background-position:
+    44% 42%,
+    83% 34%,
+    88% 58%,
+    7% 88%;
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(42%) saturate(533%) hue-rotate(127deg) brightness(94%) contrast(91%);
+}
+
+/* Mantener el contenido encima */
+.hero-inner,
+.hero-grid,
+.hero .container {
+  position: relative;
+  z-index: 3 !important;
+}
+
+/* Patrón muy sutil dentro de la tarjeta */
+.card-main,
+.hero-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-main::before,
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("assets/Ilustraciones_RGB-55.png"),
+    url("assets/Ilustraciones_RGB-49.png");
+  background-size:
+    170px auto,
+    210px auto;
+  background-position:
+    82% 26%,
+    46% 28%;
+  background-repeat: no-repeat;
+  opacity: .12;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(42%) saturate(533%) hue-rotate(127deg) brightness(94%) contrast(91%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-main > *,
+.hero-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+@media(max-width:900px) {
+  .hero-pattern-birds {
+    opacity: .075;
+    background-size:
+      160px auto,
+      130px auto,
+      190px auto,
+      180px auto;
+    background-position:
+      64% 40%,
+      96% 48%,
+      94% 64%,
+      -6% 88%;
+  }
+}
+
+    
+
+  
+/* =====================================================
+   CLEAN FINAL PATTERN — Sayulita Dry Cleaners
+   ===================================================== */
+
+/* Limpieza de intentos anteriores en hero */
+.hero-pattern-birds,
+.hero-flower,
+.hero-fern,
+.bird-real-main,
+.bird-real-small,
+.bird-real-card,
+.bird-real-services,
+.bird-real-dry,
+.bird-real-cta,
+.bird-hero-main,
+.bird-hero-secondary,
+.bird-hero-top,
+.bird-card-main,
+.day-bird-hero-main,
+.day-bird-hero-small,
+.day-bird-card,
+.nawalli-bird {
+  display: none !important;
+}
+
+/* Restaurar hero correctamente */
+.hero {
+  position: relative !important;
+  min-height: 100svh !important;
+  display: grid !important;
+  align-items: center !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  background: var(--ink) !important;
+  color: white !important;
+  padding: 130px 0 90px !important;
+}
+
+/* No usar pseudo-elementos viejos del hero */
+.hero::before,
+.hero::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Textura base, más discreta */
+.hero-texture {
+  position: absolute !important;
+  inset: 0 !important;
+  background: url("assets/texture-dark.jpeg") center/620px auto repeat !important;
+  opacity: .045 !important;
+  mix-blend-mode: screen !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+/* Patrón final, distribuido sin encerrar en divs internos */
+.hero-pattern-final {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: .105;
+  background-image:
+    url("assets/Ilustraciones_RGB-50.png"),
+    url("assets/Ilustraciones_RGB-55.png"),
+    url("assets/Ilustraciones_RGB-50.png"),
+    url("assets/Ilustraciones_RGB-55.png"),
+    url("assets/Ilustraciones_RGB-41.png"),
+    url("assets/Ilustraciones_RGB-48.png"),
+    url("assets/Ilustraciones_RGB-49.png");
+  background-size:
+    210px auto,
+    170px auto,
+    160px auto,
+    230px auto,
+    260px auto,
+    240px auto,
+    220px auto;
+  background-position:
+    7% 36%,
+    40% 42%,
+    67% 30%,
+    92% 48%,
+    86% 24%,
+    5% 88%,
+    72% 72%;
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(42%) saturate(533%) hue-rotate(127deg) brightness(94%) contrast(91%);
+}
+
+/* Contenido siempre arriba */
+.hero-grid,
+.hero .container {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* Restaurar grid del hero */
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.1fr .9fr !important;
+  align-items: center !important;
+  gap: 56px !important;
+}
+
+/* Mantener tarjeta limpia */
+.card-main {
+  position: absolute !important;
+  overflow: hidden !important;
+  z-index: 2 !important;
+}
+
+/* Patrón interno de la tarjeta, más limpio */
+.card-main::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 14px !important;
+  border: 1px solid rgba(17,170,168,.4) !important;
+  background-image:
+    url("assets/Ilustraciones_RGB-55.png"),
+    url("assets/Ilustraciones_RGB-49.png");
+  background-size:
+    175px auto,
+    220px auto;
+  background-position:
+    86% 25%,
+    45% 28%;
+  background-repeat:
+    no-repeat,
+    no-repeat;
+  opacity: .15;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(42%) saturate(533%) hue-rotate(127deg) brightness(94%) contrast(91%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card-main > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Quitar imágenes sueltas dentro de tarjeta para que no compitan */
+.card-floral,
+.card-main .bird-real-card {
+  display: none !important;
+}
+
+/* Servicios: mantener decoración sutil */
+.services::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    url("assets/Ilustraciones_RGB-50.png"),
+    url("assets/Ilustraciones_RGB-41.png"),
+    url("assets/Ilustraciones_RGB-48.png");
+  background-size:
+    190px auto,
+    230px auto,
+    250px auto;
+  background-position:
+    8% 18%,
+    92% 12%,
+    4% 92%;
+  background-repeat: no-repeat;
+  opacity: .055;
+  filter: brightness(0) saturate(100%) invert(22%) sepia(35%) saturate(1170%) hue-rotate(188deg) brightness(90%) contrast(92%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.services > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive */
+@media(max-width:900px) {
+  .hero {
+    align-items: center !important;
+    text-align: center !important;
+    padding: 120px 0 70px !important;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero-pattern-final {
+    opacity: .075;
+    background-size:
+      160px auto,
+      130px auto,
+      130px auto,
+      180px auto,
+      210px auto,
+      190px auto,
+      180px auto;
+    background-position:
+      -4% 32%,
+      68% 38%,
+      86% 24%,
+      106% 52%,
+      96% 22%,
+      -8% 90%,
+      75% 72%;
+  }
+}
+
+/* =====================================================
+   FINAL: solo 3 pájaros en el Hero
+   ===================================================== */
+
+/* Apagar patrones grandes anteriores */
+.hero-pattern-birds,
+.hero-pattern-final {
+  display: none !important;
+}
+
+/* Apagar pájaros fuera del hero */
+.bird-real-card,
+.bird-real-services,
+.bird-real-dry,
+.bird-real-cta {
+  display: none !important;
+}
+
+/* Asegurar que los pájaros del hero sí se vean */
+.bird-real-main,
+.bird-real-small,
+.bird-real-third {
+  display: block !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  height: auto !important;
+  z-index: 1 !important;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(42%) saturate(533%) hue-rotate(127deg) brightness(94%) contrast(91%) !important;
+}
+
+/* Pájaro 1: entre el texto y la tarjeta */
+.bird-real-main {
+  left: 42vw !important;
+  top: 365px !important;
+  width: 230px !important;
+  opacity: .17 !important;
+  transform: rotate(-6deg) !important;
+}
+
+/* Pájaro 2: dentro/zona superior de la tarjeta */
+.bird-real-small {
+  right: 10vw !important;
+  top: 360px !important;
+  width: 210px !important;
+  opacity: .16 !important;
+  transform: rotate(-5deg) !important;
+}
+
+/* Pájaro 3: más discreto al fondo */
+.bird-real-third {
+  left: 15vw !important;
+  top: 330px !important;
+  width: 180px !important;
+  opacity: .075 !important;
+  transform: scaleX(-1) rotate(5deg) !important;
+}
+
+/* Mantener el contenido arriba */
+.hero-grid,
+.hero .container {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* =====================================================
+   Patrón manual desacomodado de pájaros en hero
+   ===================================================== */
+
+/* Apagar intentos anteriores */
+.hero-pattern-birds,
+.hero-pattern-final,
+.bird-real-main,
+.bird-real-small,
+.bird-real-third,
+.bird-real-card,
+.bird-real-services,
+.bird-real-dry,
+.bird-real-cta {
+  display: none !important;
+}
+
+/* Base para pájaros del hero */
+.hero-bird {
+  display: block !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  height: auto !important;
+  z-index: 1 !important;
+  filter: brightness(0) saturate(100%) invert(76%) sepia(42%) saturate(533%) hue-rotate(127deg) brightness(94%) contrast(91%) !important;
+}
+
+/* Pájaro suave detrás del texto, arriba */
+.bird-a {
+  left: 10vw !important;
+  top: 235px !important;
+  width: 190px !important;
+  opacity: .055 !important;
+  transform: rotate(-8deg) scaleX(-1) !important;
+}
+
+/* Pájaro principal entre texto y tarjeta, pero separado */
+.bird-b {
+  left: 45vw !important;
+  top: 430px !important;
+  width: 240px !important;
+  opacity: .15 !important;
+  transform: rotate(-6deg) !important;
+}
+
+/* Pájaro pequeño arriba de tarjeta */
+.bird-c {
+  right: 20vw !important;
+  top: 260px !important;
+  width: 150px !important;
+  opacity: .075 !important;
+  transform: rotate(8deg) scaleX(-1) !important;
+}
+
+/* Pájaro dentro/zona derecha de tarjeta, discreto */
+.bird-d {
+  right: 7vw !important;
+  top: 455px !important;
+  width: 210px !important;
+  opacity: .12 !important;
+  transform: rotate(-5deg) !important;
+}
+
+/* Pájaro bajo, casi textura */
+.bird-e {
+  left: 32vw !important;
+  bottom: 70px !important;
+  width: 170px !important;
+  opacity: .065 !important;
+  transform: rotate(5deg) !important;
+}
+
+/* Flores/helechos como complemento, no protagonistas */
+.hero-flower {
+  right: 5vw !important;
+  top: 190px !important;
+  width: 300px !important;
+  opacity: .09 !important;
+}
+
+.hero-fern {
+  left: 4vw !important;
+  bottom: 45px !important;
+  width: 245px !important;
+  opacity: .12 !important;
+}
+
+/* Mantener contenido encima */
+.hero-grid,
+.hero .container {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* Responsive */
+@media(max-width:900px) {
+  .bird-a,
+  .bird-c,
+  .bird-e {
+    display: none !important;
+  }
+
+  .bird-b {
+    left: auto !important;
+    right: -80px !important;
+    top: 300px !important;
+    width: 250px !important;
+    opacity: .10 !important;
+  }
+
+  .bird-d {
+    right: 8vw !important;
+    top: 520px !important;
+    width: 170px !important;
+    opacity: .08 !important;
+  }
+}
+
+</style>
 </head>
 <body data-lang="es">
   <nav class="nav">
@@ -705,9 +1251,13 @@
 
   <main>
     <header id="inicio" class="hero">
+      <div class="hero-pattern-final" aria-hidden="true"></div>
+      <div class="hero-pattern-birds" aria-hidden="true"></div>
       <div class="hero-texture" aria-hidden="true"></div>
       <img class="hero-flower" src="assets/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
       <img class="hero-fern" src="assets/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
+      <img class="bird-real-main" src="assets/Ilustraciones_RGB-50.png" alt="" aria-hidden="true">
+      <img class="bird-real-small" src="assets/Ilustraciones_RGB-55.png" alt="" aria-hidden="true">
 
       <div class="container hero-grid">
         <div>
@@ -739,11 +1289,10 @@
           <div class="blob"></div>
           <div class="card-main">
             <img class="card-floral" src="assets/Ilustraciones_RGB-49.png" alt="" aria-hidden="true">
-            <div class="hanger line-hanger" aria-hidden="true"></div>
+            <img class="bird-real-card" src="assets/Ilustraciones_RGB-55.png" alt="" aria-hidden="true">
             <h3><span class="es">Planchado &amp; Prensado</span><span class="en">Ironing &amp; Pressing</span></h3>
             <p class="es">Camisas, pantalones, vestidos, faldas y shorts.</p>
             <p class="en">Shirts, pants, dresses, skirts and shorts.</p>
-            <div class="lang"><span class="es">Ironing &amp; pressing service available</span><span class="en">Servicio de planchado y prensado disponible</span></div>
             <div class="price-pill"><span class="es">Desde $20 MXN</span><span class="en">From $20 MXN</span></div>
           </div>
         </div>
@@ -751,6 +1300,7 @@
     </header>
 
     <section id="servicios" class="services">
+      <img class="bird-real-services" src="assets/Ilustraciones_RGB-50.png" alt="" aria-hidden="true">
       <div class="container">
         <div class="section-head">
           <h2><span class="es">Precios de planchado y prensado</span><span class="en">Ironing and pressing prices</span></h2>
@@ -771,6 +1321,7 @@
     <section id="tintoreria">
       <div class="container dry-grid">
         <article class="dry-card">
+          <img class="bird-real-dry" src="assets/Ilustraciones_RGB-55.png" alt="" aria-hidden="true">
           <span class="eyebrow">Dry Cleaning</span>
           <h2><span class="es">Tintorería bajo solicitud</span><span class="en">Dry cleaning upon request</span></h2>
 
@@ -838,6 +1389,7 @@
     <section class="cta">
       <div class="container">
         <div class="cta-box">
+          <img class="bird-real-cta" src="assets/Ilustraciones_RGB-50.png" alt="" aria-hidden="true">
           <div>
             <h2><span class="es">¿Listo para cuidar mejor tus prendas?</span><span class="en">Ready to take better care of your clothes?</span></h2>
             <p class="es">Solicita información directamente por WhatsApp.</p>
