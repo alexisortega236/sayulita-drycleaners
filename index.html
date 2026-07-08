@@ -141,12 +141,28 @@
     .cta-box .btn{background:white;color:var(--sea-dark);white-space:nowrap}
     footer{padding:42px 0 90px;color:var(--muted);font-size:14px}
     .footer-inner{display:flex;justify-content:space-between;gap:18px;border-top:1px solid rgba(22,54,64,.1);padding-top:28px}
-    .whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:40;width:58px;height:58px;border-radius:50%;background:#25D366;color:white;text-decoration:none;display:grid;place-items:center;font-size:28px;box-shadow:0 14px 35px rgba(0,0,0,.22);transition:.2s ease}
-    .whatsapp-float:hover{transform:translateY(-3px) scale(1.03)}
+    .whatsapp-float{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:40;
+      width:66px;
+      height:66px;
+      border-radius:50%;
+      background:linear-gradient(145deg,#25D366,#1fb455);
+      color:white;
+      text-decoration:none;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.18);
+      box-shadow:0 16px 38px rgba(0,0,0,.24),0 0 0 6px rgba(37,211,102,.12);
+      transition:.2s ease;
+    }
+    .whatsapp-float:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 20px 44px rgba(0,0,0,.26),0 0 0 8px rgba(37,211,102,.16)}
+    .whatsapp-icon{width:34px;height:34px;display:block;flex:none}
     .lang{font-size:12px;color:var(--muted);margin-top:8px}
 
     @media (max-width:900px){
-      .nav-links a:not(.btn){display:none}
       .hero-grid,.dry-grid{grid-template-columns:1fr}
       .visual{min-height:390px}
       .pricing-grid{grid-template-columns:repeat(2,1fr)}
@@ -247,10 +263,7 @@
     .step:hover{background:white}
     .step-num{border-radius:50%;background:transparent;color:var(--sea);border:1px solid var(--sea)}
     .cta-box{border-radius:0;background:var(--sea)}
-    .whatsapp-float{background:var(--sea);font-size:0}
-    .wa-line{width:27px;height:27px;border:2px solid white;border-radius:50%;position:relative}
-    .wa-line:before{content:"";position:absolute;left:1px;bottom:-4px;width:8px;height:8px;border-left:2px solid white;transform:rotate(-28deg)}
-    .wa-line:after{content:"";position:absolute;inset:6px;border:2px solid white;border-left-color:transparent;border-top-color:transparent;border-radius:50%;transform:rotate(15deg)}
+    .whatsapp-float{font-size:0}
     footer{background:var(--ink);color:rgba(255,255,255,.7)}
     footer strong{color:white;text-transform:uppercase;letter-spacing:.1em}
 
@@ -308,7 +321,7 @@
       top:70px;
       width:360px;
       height:360px;
-      background:url("assets/Ilustraciones_RGB-48.png") center/contain no-repeat;
+      background:url("RGB/Ilustraciones_RGB-48.png") center/contain no-repeat;
       opacity:.055;
       pointer-events:none;
       z-index:0;
@@ -323,7 +336,7 @@
       bottom:20px;
       width:320px;
       height:320px;
-      background:url("assets/Ilustraciones_RGB-41.png") center/contain no-repeat;
+      background:url("RGB/Ilustraciones_RGB-41.png") center/contain no-repeat;
       opacity:.055;
       pointer-events:none;
       z-index:0;
@@ -338,7 +351,7 @@
       bottom:-95px;
       width:340px;
       height:340px;
-      background:url("assets/Ilustraciones_RGB-49.png") center/contain no-repeat;
+      background:url("RGB/Ilustraciones_RGB-41.png") center/contain no-repeat;
       opacity:.13;
       pointer-events:none;
       z-index:0;
@@ -383,7 +396,7 @@
       position:absolute;
       inset:0;
       background:url("assets/texture-dark.jpeg") center/560px auto repeat;
-      opacity:.095;
+      opacity:.14;
       mix-blend-mode:screen;
       pointer-events:none;
       z-index:0;
@@ -403,21 +416,21 @@
       right:3vw !important;
       top:155px !important;
       width:clamp(210px,24vw,360px) !important;
-      opacity:.26 !important;
+      opacity:.38 !important;
     }
 
     .hero-fern{
       left:4vw !important;
       bottom:55px !important;
       width:clamp(170px,18vw,270px) !important;
-      opacity:.24 !important;
+      opacity:.34 !important;
     }
 
     .card-floral{
       right:-20px !important;
       bottom:-25px !important;
       width:250px !important;
-      opacity:.28 !important;
+      opacity:.38 !important;
     }
 
     .services{
@@ -427,7 +440,7 @@
     }
 
     .services:after{
-      opacity:.095 !important;
+      opacity:.14 !important;
       right:-70px !important;
       top:55px !important;
       width:390px !important;
@@ -455,7 +468,7 @@
       left:50%;
       top:50%;
       width:120px;
-      opacity:.055;
+      opacity:.10;
       pointer-events:none;
       transform:translate(-50%,-50%);
       z-index:0;
@@ -482,8 +495,8 @@
       content:"";
       position:absolute;
       inset:0;
-      background:url("assets/Ilustraciones_RGB-48.png") left -80px bottom -95px/300px auto no-repeat;
-      opacity:.13;
+      background:url("RGB/Ilustraciones_RGB-50.png") left -80px bottom -95px/300px auto no-repeat;
+      opacity:.20;
       filter: brightness(0) saturate(100%) invert(76%) sepia(42%) saturate(533%) hue-rotate(127deg) brightness(94%) contrast(91%);
       pointer-events:none;
       z-index:0;
@@ -502,7 +515,7 @@
       right:-48px;
       bottom:-72px;
       width:260px;
-      opacity:.10;
+      opacity:.16;
       pointer-events:none;
       z-index:0;
     }
@@ -522,7 +535,7 @@
       right:-35px;
       bottom:-45px;
       width:150px;
-      opacity:.055;
+      opacity:.10;
       pointer-events:none;
       z-index:0;
     }
@@ -559,15 +572,15 @@
       right:4vw;
       bottom:-70px;
       width:220px;
-      opacity:.08;
+      opacity:.12;
       pointer-events:none;
     }
 
     @media(max-width:900px){
-      .hero-texture{opacity:.07}
+    .hero-texture{opacity:.10}
       .services:after{opacity:.06}
       .price-asset{width:96px}
-      .contact-asset{width:210px;opacity:.07}
+      .contact-asset{width:210px;opacity:.11}
       .footer-asset{display:none}
     }
 
@@ -742,22 +755,18 @@
   z-index: 1;
   opacity: .12;
   background-image:
-    url("assets/Ilustraciones_RGB-50.png"),
-    url("assets/Ilustraciones_RGB-55.png"),
-    url("assets/Ilustraciones_RGB-41.png"),
-    url("assets/Ilustraciones_RGB-48.png");
+    url("RGB/Ilustraciones_RGB-41.png"),
+    url("RGB/Ilustraciones_RGB-48.png"),
+    url("RGB/Ilustraciones_RGB-50.png");
   background-size:
     210px auto,
     170px auto,
-    250px auto,
-    230px auto;
+    250px auto;
   background-position:
     44% 42%,
     83% 34%,
-    88% 58%,
-    7% 88%;
+    88% 58%;
   background-repeat:
-    no-repeat,
     no-repeat,
     no-repeat,
     no-repeat;
@@ -785,8 +794,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    url("assets/Ilustraciones_RGB-55.png"),
-    url("assets/Ilustraciones_RGB-49.png");
+    url("RGB/Ilustraciones_RGB-41.png"),
+    url("RGB/Ilustraciones_RGB-50.png");
   background-size:
     170px auto,
     210px auto;
@@ -887,36 +896,20 @@
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  opacity: .105;
+  opacity: .16;
   background-image:
-    url("assets/Ilustraciones_RGB-50.png"),
-    url("assets/Ilustraciones_RGB-55.png"),
-    url("assets/Ilustraciones_RGB-50.png"),
-    url("assets/Ilustraciones_RGB-55.png"),
-    url("assets/Ilustraciones_RGB-41.png"),
-    url("assets/Ilustraciones_RGB-48.png"),
-    url("assets/Ilustraciones_RGB-49.png");
+    url("RGB/Ilustraciones_RGB-41.png"),
+    url("RGB/Ilustraciones_RGB-48.png"),
+    url("RGB/Ilustraciones_RGB-50.png");
   background-size:
     210px auto,
     170px auto,
-    160px auto,
-    230px auto,
-    260px auto,
-    240px auto,
-    220px auto;
+    160px auto;
   background-position:
     7% 36%,
     40% 42%,
-    67% 30%,
-    92% 48%,
-    86% 24%,
-    5% 88%,
-    72% 72%;
+    67% 30%;
   background-repeat:
-    no-repeat,
-    no-repeat,
-    no-repeat,
-    no-repeat,
     no-repeat,
     no-repeat,
     no-repeat;
@@ -951,20 +944,9 @@
   position: absolute !important;
   inset: 14px !important;
   border: 1px solid rgba(17,170,168,.4) !important;
-  background-image:
-    url("assets/Ilustraciones_RGB-55.png"),
-    url("assets/Ilustraciones_RGB-49.png");
-  background-size:
-    175px auto,
-    220px auto;
-  background-position:
-    86% 25%,
-    45% 28%;
-  background-repeat:
-    no-repeat,
-    no-repeat;
-  opacity: .15;
-  filter: brightness(0) saturate(100%) invert(76%) sepia(42%) saturate(533%) hue-rotate(127deg) brightness(94%) contrast(91%);
+  background: none !important;
+  opacity: 1 !important;
+  filter: none !important;
   pointer-events: none;
   z-index: 0;
 }
@@ -986,9 +968,9 @@
   position: absolute;
   inset: 0;
   background-image:
-    url("assets/Ilustraciones_RGB-50.png"),
-    url("assets/Ilustraciones_RGB-41.png"),
-    url("assets/Ilustraciones_RGB-48.png");
+    url("RGB/Ilustraciones_RGB-41.png"),
+    url("RGB/Ilustraciones_RGB-48.png"),
+    url("RGB/Ilustraciones_RGB-50.png");
   background-size:
     190px auto,
     230px auto,
@@ -1077,7 +1059,7 @@
   left: 42vw !important;
   top: 365px !important;
   width: 230px !important;
-  opacity: .17 !important;
+  opacity: .28 !important;
   transform: rotate(-6deg) !important;
 }
 
@@ -1086,7 +1068,7 @@
   right: 10vw !important;
   top: 360px !important;
   width: 210px !important;
-  opacity: .16 !important;
+  opacity: .25 !important;
   transform: rotate(-5deg) !important;
 }
 
@@ -1095,7 +1077,7 @@
   left: 15vw !important;
   top: 330px !important;
   width: 180px !important;
-  opacity: .075 !important;
+  opacity: .12 !important;
   transform: scaleX(-1) rotate(5deg) !important;
 }
 
@@ -1138,7 +1120,7 @@
   left: 10vw !important;
   top: 235px !important;
   width: 190px !important;
-  opacity: .055 !important;
+  opacity: .10 !important;
   transform: rotate(-8deg) scaleX(-1) !important;
 }
 
@@ -1147,7 +1129,7 @@
   left: 45vw !important;
   top: 430px !important;
   width: 240px !important;
-  opacity: .15 !important;
+  opacity: .22 !important;
   transform: rotate(-6deg) !important;
 }
 
@@ -1156,7 +1138,7 @@
   right: 20vw !important;
   top: 260px !important;
   width: 150px !important;
-  opacity: .075 !important;
+  opacity: .12 !important;
   transform: rotate(8deg) scaleX(-1) !important;
 }
 
@@ -1174,7 +1156,7 @@
   left: 32vw !important;
   bottom: 70px !important;
   width: 170px !important;
-  opacity: .065 !important;
+  opacity: .10 !important;
   transform: rotate(5deg) !important;
 }
 
@@ -1183,14 +1165,14 @@
   right: 5vw !important;
   top: 190px !important;
   width: 300px !important;
-  opacity: .09 !important;
+  opacity: .15 !important;
 }
 
 .hero-fern {
   left: 4vw !important;
   bottom: 45px !important;
   width: 245px !important;
-  opacity: .12 !important;
+  opacity: .18 !important;
 }
 
 /* Mantener contenido encima */
@@ -1213,14 +1195,275 @@
     right: -80px !important;
     top: 300px !important;
     width: 250px !important;
-    opacity: .10 !important;
+    opacity: .16 !important;
   }
 
   .bird-d {
     right: 8vw !important;
     top: 520px !important;
     width: 170px !important;
-    opacity: .08 !important;
+    opacity: .12 !important;
+  }
+}
+
+/* RGB gallery backgrounds */
+.hero,
+.services,
+#tintoreria,
+.cta-box,
+footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-pattern-rgb,
+.services-pattern-rgb,
+.tintoreria-pattern-rgb,
+.cta-pattern-rgb,
+.footer-pattern-rgb {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-repeat: no-repeat;
+  mix-blend-mode: screen;
+  filter: brightness(0) saturate(100%) invert(74%) sepia(32%) saturate(590%) hue-rotate(129deg) brightness(96%) contrast(90%);
+}
+
+.hero-pattern-rgb {
+  opacity: .14;
+  background-image:
+    url("RGB/Ilustraciones_RGB-41.png"),
+    url("RGB/Ilustraciones_RGB-48.png"),
+    url("RGB/Ilustraciones_RGB-50.png");
+  background-size:
+    220px auto,
+    160px auto,
+    200px auto;
+  background-position:
+    4% 16%,
+    16% 78%,
+    86% 38%;
+}
+
+.services-pattern-rgb {
+  opacity: .10;
+  background-image:
+    url("RGB/Ilustraciones_RGB-48.png"),
+    url("RGB/Ilustraciones_RGB-41.png"),
+    url("RGB/Ilustraciones_RGB-50.png");
+  background-size:
+    180px auto,
+    220px auto,
+    160px auto;
+  background-position:
+    2% 10%,
+    90% 12%,
+    48% 76%;
+}
+
+.tintoreria-pattern-rgb {
+  opacity: .09;
+  background-image:
+    url("RGB/Ilustraciones_RGB-41.png"),
+    url("RGB/Ilustraciones_RGB-48.png"),
+    url("RGB/Ilustraciones_RGB-50.png");
+  background-size:
+    230px auto,
+    190px auto,
+    220px auto;
+  background-position:
+    -2% 6%,
+    78% 14%,
+    92% 62%;
+}
+
+.cta-pattern-rgb {
+  opacity: .11;
+  background-image:
+    url("RGB/Ilustraciones_RGB-41.png"),
+    url("RGB/Ilustraciones_RGB-48.png"),
+    url("RGB/Ilustraciones_RGB-50.png");
+  background-size:
+    170px auto,
+    150px auto,
+    180px auto;
+  background-position:
+    6% 20%,
+    82% 16%,
+    12% 84%;
+}
+
+.cta-box > .cta-pattern-rgb {
+  z-index: 1;
+}
+
+.cta-box > :not(.cta-pattern-rgb) {
+  z-index: 2;
+}
+
+.footer-pattern-rgb {
+  opacity: .07;
+  background-image:
+    url("RGB/Ilustraciones_RGB-48.png"),
+    url("RGB/Ilustraciones_RGB-41.png"),
+    url("RGB/Ilustraciones_RGB-50.png");
+  background-size:
+    200px auto,
+    170px auto,
+    180px auto;
+  background-position:
+    2% 28%,
+    28% 72%,
+    72% 18%;
+}
+
+.hero-grid,
+.services > .container,
+#tintoreria > .container,
+.cta-box > *,
+.footer-inner {
+  position: relative;
+  z-index: 2;
+}
+
+@media(max-width:900px) {
+  .hero-pattern-rgb,
+  .services-pattern-rgb,
+  .tintoreria-pattern-rgb,
+  .cta-pattern-rgb {
+    opacity: .08;
+  }
+
+  .hero-pattern-rgb {
+    background-size:
+      160px auto,
+      120px auto,
+      150px auto,
+      140px auto,
+      120px auto,
+      150px auto,
+      120px auto,
+      140px auto,
+      140px auto,
+      150px auto;
+  }
+
+  .services-pattern-rgb,
+  .tintoreria-pattern-rgb,
+  .cta-pattern-rgb {
+    background-size:
+      140px auto,
+      150px auto,
+      120px auto,
+      140px auto,
+      110px auto,
+      120px auto,
+      130px auto,
+      120px auto;
+  }
+
+  .footer-pattern-rgb {
+    display: none;
+  }
+}
+
+body{
+  position:relative;
+  isolation:isolate;
+}
+
+main{
+  position:relative;
+  z-index:1;
+}
+
+body::after{
+  content:"";
+  position:fixed;
+  inset:-6vh -6vw;
+  pointer-events:none;
+  z-index:0;
+  opacity:.055;
+  background-image:
+    url("RGB/Ilustraciones_RGB-41.png"),
+    url("RGB/Ilustraciones_RGB-48.png"),
+    url("RGB/Ilustraciones_RGB-50.png"),
+    url("RGB/Ilustraciones_RGB-41.png"),
+    url("RGB/Ilustraciones_RGB-48.png"),
+    url("RGB/Ilustraciones_RGB-50.png");
+  background-size:
+    130px auto,
+    150px auto,
+    120px auto,
+    160px auto,
+    140px auto,
+    170px auto;
+  background-position:
+    2% 8%,
+    11% 22%,
+    24% 10%,
+    33% 26%,
+    45% 12%,
+    56% 28%;
+  background-repeat:repeat;
+  mix-blend-mode:screen;
+  filter:brightness(0) saturate(100%) invert(76%) sepia(42%) saturate(533%) hue-rotate(127deg) brightness(94%) contrast(91%);
+}
+
+.hero-pattern-rgb,
+.services-pattern-rgb,
+.tintoreria-pattern-rgb,
+.cta-pattern-rgb,
+.footer-pattern-rgb{
+  background-repeat:repeat;
+}
+
+/* Final UI overrides */
+.product-icon{
+  width:64px;
+  height:64px;
+  display:block;
+  margin:0 auto 18px;
+  color:var(--sea);
+  position:relative;
+  z-index:1;
+  transition:transform .25s ease,color .25s ease;
+}
+
+.product-icon path,
+.product-icon line,
+.product-icon polyline{
+  fill:currentColor;
+  fill-opacity:.10;
+  stroke:currentColor;
+  stroke-width:2.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.price-card:hover .product-icon{
+  color:white;
+  transform:translateY(-1px) scale(1.03);
+}
+
+@media(max-width:900px){
+  .nav-inner{
+    flex-wrap:wrap;
+    align-items:flex-start;
+    padding:14px 0 16px;
+  }
+
+  .nav-actions{
+    margin-left:auto;
+    flex-wrap:wrap;
+    justify-content:flex-end;
+  }
+
+  .price-card .product-icon{
+    width:58px;
+    height:58px;
+    margin-bottom:16px;
   }
 }
 
@@ -1234,7 +1477,7 @@
         <span>Sayulita Dry Cleaners</span>
       </a>
 
-      <div class="nav-links">
+      <div class="nav-links" id="nav-links">
         <a href="#servicios"><span class="es">Servicios</span><span class="en">Services</span></a>
         <a href="#tintoreria"><span class="es">Tintorería</span><span class="en">Dry Cleaning</span></a>
       </div>
@@ -1244,20 +1487,21 @@
           <button type="button" data-lang-btn="es">ES</button>
           <button type="button" data-lang-btn="en">EN</button>
         </div>
-        <a class="btn btn-primary js-whatsapp" href="#">WhatsApp</a>
+        <a class="btn btn-primary js-whatsapp" href="#"><span class="es">WhatsApp</span><span class="en">WhatsApp</span></a>
       </div>
     </div>
   </nav>
 
   <main>
     <header id="inicio" class="hero">
+      <div class="hero-pattern-rgb" aria-hidden="true"></div>
       <div class="hero-pattern-final" aria-hidden="true"></div>
       <div class="hero-pattern-birds" aria-hidden="true"></div>
       <div class="hero-texture" aria-hidden="true"></div>
-      <img class="hero-flower" src="assets/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
-      <img class="hero-fern" src="assets/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
-      <img class="bird-real-main" src="assets/Ilustraciones_RGB-50.png" alt="" aria-hidden="true">
-      <img class="bird-real-small" src="assets/Ilustraciones_RGB-55.png" alt="" aria-hidden="true">
+      <img class="hero-flower" src="RGB/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
+      <img class="hero-fern" src="RGB/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
+      <img class="bird-real-main" src="RGB/Ilustraciones_RGB-50.png" alt="" aria-hidden="true">
+      <img class="bird-real-small" src="RGB/Ilustraciones_RGB-50.png" alt="" aria-hidden="true">
 
       <div class="container hero-grid">
         <div>
@@ -1288,40 +1532,83 @@
         <div class="visual" aria-hidden="true">
           <div class="blob"></div>
           <div class="card-main">
-            <img class="card-floral" src="assets/Ilustraciones_RGB-49.png" alt="" aria-hidden="true">
-            <img class="bird-real-card" src="assets/Ilustraciones_RGB-55.png" alt="" aria-hidden="true">
+            <img class="card-floral" src="RGB/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
+            <img class="bird-real-card" src="RGB/Ilustraciones_RGB-50.png" alt="" aria-hidden="true">
             <h3><span class="es">Planchado &amp; Prensado</span><span class="en">Ironing &amp; Pressing</span></h3>
             <p class="es">Camisas, pantalones, vestidos, faldas y shorts.</p>
             <p class="en">Shirts, pants, dresses, skirts and shorts.</p>
-            <div class="price-pill"><span class="es">Desde $20 MXN</span><span class="en">From $20 MXN</span></div>
+            <div class="price-pill"><span class="es">Desde $25 MXN</span><span class="en">From $25 MXN</span></div>
           </div>
         </div>
       </div>
     </header>
 
     <section id="servicios" class="services">
-      <img class="bird-real-services" src="assets/Ilustraciones_RGB-50.png" alt="" aria-hidden="true">
+      <div class="services-pattern-rgb" aria-hidden="true"></div>
+      <img class="bird-real-services" src="RGB/Ilustraciones_RGB-50.png" alt="" aria-hidden="true">
       <div class="container">
         <div class="section-head">
           <h2><span class="es">Precios de planchado y prensado</span><span class="en">Ironing and pressing prices</span></h2>
           <p class="es">Tarifas por prenda. Para piezas especiales o grandes cantidades, contáctanos directamente.</p>
           <p class="en">Rates per garment. For special pieces or large quantities, contact us directly.</p>
+          <div style="margin-top:18px">
+            <a class="btn btn-primary" href="printable-price-sheet.pdf" download="menu-precios-sayulita-dry-cleaners.pdf">
+              <span class="es">Descargar menú PDF</span>
+              <span class="en">Download PDF menu</span>
+            </a>
+          </div>
         </div>
 
         <div class="pricing-grid">
-          <article class="price-card"><img class="price-asset" src="assets/Ilustraciones_RGB-48.png" alt="" aria-hidden="true"><div class="icon icon-shirt" aria-hidden="true"></div><h3><span class="es">Camisas</span><span class="en">Shirts</span></h3><div class="price">$20 <small>MXN</small></div></article>
-          <article class="price-card"><img class="price-asset" src="assets/Ilustraciones_RGB-49.png" alt="" aria-hidden="true"><div class="icon icon-pants" aria-hidden="true"></div><h3><span class="es">Pantalones</span><span class="en">Pants</span></h3><div class="price">$20 <small>MXN</small></div></article>
-          <article class="price-card"><img class="price-asset" src="assets/Ilustraciones_RGB-41.png" alt="" aria-hidden="true"><div class="icon icon-dress" aria-hidden="true"></div><h3><span class="es">Vestidos</span><span class="en">Dresses</span></h3><div class="price">$50 <small>MXN</small></div></article>
-          <article class="price-card"><img class="price-asset" src="assets/Ilustraciones_RGB-48.png" alt="" aria-hidden="true"><div class="icon icon-skirt" aria-hidden="true"></div><h3><span class="es">Faldas</span><span class="en">Skirts</span></h3><div class="price">$20 <small>MXN</small></div></article>
-          <article class="price-card"><img class="price-asset" src="assets/Ilustraciones_RGB-49.png" alt="" aria-hidden="true"><div class="icon icon-shorts" aria-hidden="true"></div><h3>Shorts</h3><div class="price">$20 <small>MXN</small></div></article>
+          <article class="price-card">
+            <img class="price-asset" src="RGB/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
+            <svg class="product-icon product-icon-shirt" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              <path d="M21 12 30 8h4l9 4 7 10-6 5-2-4v27H22V23l-2 4-6-5z"/>
+              <path d="M27 12h10l3 5-6 6h-4l-6-6z"/>
+            </svg>
+            <h3><span class="es">Camisas</span><span class="en">Shirts</span></h3><div class="price">$25 <small>MXN</small></div>
+          </article>
+          <article class="price-card">
+            <img class="price-asset" src="RGB/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
+            <svg class="product-icon product-icon-pants" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              <path d="M22 10h20l3 16-5 24h-6l-3-15-3 15h-6l-5-24z"/>
+              <path d="M32 10v10"/>
+            </svg>
+            <h3><span class="es">Pantalones</span><span class="en">Pants</span></h3><div class="price">$25 <small>MXN</small></div>
+          </article>
+          <article class="price-card">
+            <img class="price-asset" src="RGB/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
+            <svg class="product-icon product-icon-dress" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              <path d="M26 10h12l2 8 10 34H14L24 18z"/>
+              <path d="M28 10c1.2 2.1 2.7 3.2 4 3.2S34.8 12.1 36 10"/>
+            </svg>
+            <h3><span class="es">Vestidos</span><span class="en">Dresses</span></h3><div class="price">$50 <small>MXN</small></div>
+          </article>
+          <article class="price-card">
+            <img class="price-asset" src="RGB/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
+            <svg class="product-icon product-icon-skirt" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              <path d="M20 18h24l8 30H12z"/>
+              <path d="M32 18V9"/>
+            </svg>
+            <h3><span class="es">Faldas</span><span class="en">Skirts</span></h3><div class="price">$25 <small>MXN</small></div>
+          </article>
+          <article class="price-card">
+            <img class="price-asset" src="RGB/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
+            <svg class="product-icon product-icon-shorts" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              <path d="M20 12h24l4 18-6 22h-7l-3-13-3 13h-7l-6-22z"/>
+              <path d="M32 12v18"/>
+            </svg>
+            <h3>Shorts</h3><div class="price">$25 <small>MXN</small></div>
+          </article>
         </div>
       </div>
     </section>
 
     <section id="tintoreria">
+      <div class="tintoreria-pattern-rgb" aria-hidden="true"></div>
       <div class="container dry-grid">
         <article class="dry-card">
-          <img class="bird-real-dry" src="assets/Ilustraciones_RGB-55.png" alt="" aria-hidden="true">
+          <img class="bird-real-dry" src="RGB/Ilustraciones_RGB-50.png" alt="" aria-hidden="true">
           <span class="eyebrow">Dry Cleaning</span>
           <h2><span class="es">Tintorería bajo solicitud</span><span class="en">Dry cleaning upon request</span></h2>
 
@@ -1341,7 +1628,7 @@
         </article>
 
         <article class="contact-card">
-          <img class="contact-asset" src="assets/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
+          <img class="contact-asset" src="RGB/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
           <h3><span class="es">Cuéntanos qué prenda necesitas atender</span><span class="en">Tell us what garment you need service for</span></h3>
 
           <p class="es">Envíanos una fotografía o una breve descripción. Te confirmaremos disponibilidad y costo directamente.</p>
@@ -1360,7 +1647,7 @@
 
         <div class="steps">
           <article class="step">
-            <img class="step-asset" src="assets/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
+            <img class="step-asset" src="RGB/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
             <div class="step-num">1</div>
             <h3><span class="es">Escríbenos</span><span class="en">Message us</span></h3>
             <p class="es">Abre WhatsApp desde cualquiera de los botones de la página.</p>
@@ -1368,7 +1655,7 @@
           </article>
 
           <article class="step">
-            <img class="step-asset" src="assets/Ilustraciones_RGB-49.png" alt="" aria-hidden="true">
+            <img class="step-asset" src="RGB/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
             <div class="step-num">2</div>
             <h3><span class="es">Describe tu prenda</span><span class="en">Describe your garment</span></h3>
             <p class="es">Indica cantidad, tipo de prenda y, si aplica, envía una fotografía.</p>
@@ -1376,7 +1663,7 @@
           </article>
 
           <article class="step">
-            <img class="step-asset" src="assets/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
+            <img class="step-asset" src="RGB/Ilustraciones_RGB-41.png" alt="" aria-hidden="true">
             <div class="step-num">3</div>
             <h3><span class="es">Recibe confirmación</span><span class="en">Receive confirmation</span></h3>
             <p class="es">Te compartiremos precio, disponibilidad y detalles del servicio.</p>
@@ -1389,7 +1676,8 @@
     <section class="cta">
       <div class="container">
         <div class="cta-box">
-          <img class="bird-real-cta" src="assets/Ilustraciones_RGB-50.png" alt="" aria-hidden="true">
+          <div class="cta-pattern-rgb" aria-hidden="true"></div>
+          <img class="bird-real-cta" src="RGB/Ilustraciones_RGB-50.png" alt="" aria-hidden="true">
           <div>
             <h2><span class="es">¿Listo para cuidar mejor tus prendas?</span><span class="en">Ready to take better care of your clothes?</span></h2>
             <p class="es">Solicita información directamente por WhatsApp.</p>
@@ -1402,17 +1690,22 @@
   </main>
 
   <footer>
-    <img class="footer-asset" src="assets/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
+    <div class="footer-pattern-rgb" aria-hidden="true"></div>
+    <img class="footer-asset" src="RGB/Ilustraciones_RGB-48.png" alt="" aria-hidden="true">
     <div class="container footer-inner">
       <div><strong>Sayulita Dry Cleaners</strong><br><span class="es">Planchado, prensado y tintorería bajo solicitud.</span><span class="en">Ironing, pressing and dry cleaning upon request.</span></div>
       <div>© <span id="year"></span> Sayulita Dry Cleaners</div>
     </div>
   </footer>
 
-  <a class="whatsapp-float js-whatsapp" href="#" aria-label="Contactar por WhatsApp"><span class="wa-line" aria-hidden="true"></span></a>
+  <a class="whatsapp-float js-whatsapp" href="#" aria-label="Contactar por WhatsApp">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M12.04 2C6.51 2 2 6.38 2 11.76c0 1.9.56 3.72 1.62 5.29L2 22l5.14-1.53a10.52 10.52 0 0 0 4.9 1.21C17.57 21.68 22 17.31 22 11.94 22 6.56 17.57 2 12.04 2Zm5.86 14.45c-.24.67-1.43 1.28-1.96 1.37-.5.08-1.16.12-1.87-.1-.43-.14-.98-.33-1.69-.63-2.95-1.27-4.87-4.2-5.02-4.4-.15-.19-1.17-1.56-1.17-2.97 0-1.41.74-2.1 1-2.39.24-.27.51-.33.68-.33h.48c.15 0 .36-.05.56.45.19.5.64 1.72.69 1.84.06.12.1.27.02.43-.08.16-.12.27-.24.42-.12.15-.25.33-.36.44-.12.12-.24.25-.1.5.14.27.6 1.01 1.28 1.64.88.85 1.62 1.11 1.88 1.24.27.12.43.1.59-.05.16-.15.67-.78.85-1.05.18-.27.36-.22.6-.14.24.09 1.49.72 1.74.85.25.12.42.18.48.29.07.12.07.69-.17 1.36Z"/>
+    </svg>
+  </a>
 
   <script>
-    const whatsappNumber = "5210000000000";
+    const whatsappNumber = "523222372994";
     const whatsappMessages = {
       es: "Hola, encontré Sayulita Dry Cleaners en internet y quisiera solicitar información sobre sus servicios.",
       en: "Hi, I found Sayulita Dry Cleaners online and would like to ask about your services."
