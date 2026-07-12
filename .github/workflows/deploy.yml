@@ -10,20 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Deploy to SiteGround
-        uses: burnett01/rsync-deployments@7.0.2
+        uses: burnett01/rsync-deployments@v8
         with:
-          switches: >
-            -avzr
-            --delete
-            --exclude=".git/"
-            --exclude=".github/"
-            --exclude=".gitignore"
-            --exclude="README.md"
-            --exclude=".DS_Store"
+          switches: -avzr --delete --exclude=".git/" --exclude=".github/" --exclude=".gitignore" --exclude="README.md" --exclude=".DS_Store"
           path: ./
           remote_path: ${{ secrets.DEPLOY_PATH }}
           remote_host: ${{ secrets.SSH_HOST }}
