@@ -16,11 +16,10 @@ jobs:
       - name: Deploy to SiteGround
         uses: burnett01/rsync-deployments@v8
         with:
-          switches: -avzr --delete --exclude=".git/" --exclude=".github/" --exclude=".gitignore" --exclude="README.md" --exclude=".DS_Store"
+          switches: -avzr --delete --include="index.html" --include="assets/" --include="assets/***" --exclude="*"
           path: ./
           remote_path: ${{ secrets.DEPLOY_PATH }}
           remote_host: ${{ secrets.SSH_HOST }}
           remote_port: ${{ secrets.SSH_PORT }}
           remote_user: ${{ secrets.SSH_USER }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }}
-
